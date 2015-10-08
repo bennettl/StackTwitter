@@ -1,0 +1,22 @@
+<header role="banner">  
+    <a id="brand" href="/">StackTwitter</a>    
+    <div id="header-links-container">
+        <ul id="header-links-list">
+         <% if signed_in? %>
+         <% else %>
+                <li><%= link_to 'Sign In', main_app.new_user_session_path, id: 'signInIcon', class: 'link' %></li>
+         <% end %>
+        </ul>
+        <div id="accountMenu" class="dropdown hover" data-menu="account" style="padding: 0 10px;">
+            <% if signed_in? %>
+                <%# image_tag current_user.avatar(:thumb), class: 'thumbImage' %>
+                <span id="name">Welcome &nbsp; <%= current_user.name %></span>
+                <ul data-menu="account" class="dropdown-menu" style="top: 25px;">
+                    <li><%= link_to 'Users', main_app.users_path %></li>
+                    <li class="divider"></li>
+                    <li><%= link_to 'Sign Out', main_app.destroy_user_session_path, method: :delete %></li>
+                </ul>
+            <% end %>
+        </div>
+    </div>
+</header>

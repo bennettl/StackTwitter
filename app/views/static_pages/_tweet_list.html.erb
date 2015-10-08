@@ -1,0 +1,27 @@
+<ul id="tweet-list" class="clearfix">
+
+<% if @tweets.empty? %>
+    <li id="empty-tweets-text" class="col-xs-12">Currently there are no tweets</li>
+<% else %>
+    <% @tweets.each do |t| %>
+        <li class="col-xs-6">
+            <div class="tweet-container">
+                <a class="tweet-user" href="<%= t.user.uri %>" target="_blank">
+                    <%= image_tag t.user.profile_image_uri, class: 'tweet-profile-image' %>
+                    <%= t.user.screen_name %>
+                </a>
+                <div class="tweet-content">
+                    <%= t.full_text %>
+                </div>
+
+                <div class="tweet-stats">
+                    <span><%= number_with_delimiter(t.retweet_count, precision: 2)  %> Retweets</span>
+                    <span><%= number_with_delimiter(t.favorite_count, precision: 2)  %> Favorites</span>
+                </div>
+            </div>
+        </li>
+    <% end %>
+
+<% end %>
+
+</ul>

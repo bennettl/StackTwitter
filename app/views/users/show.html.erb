@@ -1,0 +1,38 @@
+<% provide(:title, "User #{@user.id}") %>
+
+<div id="user-show" class="box col-xs-12 col-xs-offset-0 col-sm-10 col-sm-offset-1 clearfix"> 
+    <%= link_to '&#8592; Back'.html_safe, 'javascript:history.back()', id: 'back-btn' %>
+    <%= link_to 'Edit', edit_user_path(@user), id: 'edit-btn' %>
+    
+    <div class="title">User #<%= @user.id %></div>
+
+    <div class="section-title">Basic Information</div>
+
+    <ul id="user-profile" class="main-section">
+        <li class="clearfix col-xs-12 col-sm-6">
+            <div class="subtitle col-xs-12 col-sm-6">ID</div>
+            <div class="subvalue col-xs-12 col-sm-6"><%= @user.id %></div>
+        </li>
+        <li class="clearfix col-xs-12 col-sm-6">
+            <div class="subtitle col-xs-12 col-sm-6">First Name</div>
+            <div class="subvalue col-xs-12 col-sm-6"><%= @user.first_name %></div>
+        </li>
+        <li class="clearfix col-xs-12 col-sm-6">
+            <div class="subtitle col-xs-12 col-sm-6">Last Name</div>
+            <div class="subvalue col-xs-12 col-sm-6"><%= @user.last_name %></div>
+        </li>
+        <li class="clearfix col-xs-12 col-sm-6">
+            <div class="subtitle col-xs-12 col-sm-6">Email</div>
+            <div class="subvalue col-xs-12 col-sm-6"><%= @user.email %></div>
+        </li>
+        <li class="clearfix col-xs-12 col-sm-6">
+            <div class="subtitle col-xs-12 col-sm-6">Created At</div>
+            <div class="subvalue col-xs-12 col-sm-6"><%= @user.created_at.to_time.strftime('%B %e, %Y') unless @user.created_at.nil?  %></div>
+        </li>
+        <li class="clearfix col-xs-12 col-sm-6">
+            <div class="subtitle col-xs-12 col-sm-6">Updated At</div>
+            <div class="subvalue col-xs-12 col-sm-6"><%= @user.updated_at.to_time.strftime('%B %e, %Y') unless @user.created_at.nil?  %></div>
+        </li>
+    </ul>
+
+</div>

@@ -1,0 +1,704 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import "bootstrap";
+@import "font-awesome";
+
+/********************  VARIABLES ********************/
+
+$primaryColor: #5BAAB7;
+$red: #CE2929;
+
+/********************  MIXINS ********************/
+
+@mixin border-radius($radius: 1px) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+          border-radius: $radius;
+}
+
+/********************  SITE WIDE ********************/
+
+::-webkit-input-placeholder {
+    color:    #D6D6D6 !important;
+}
+
+:-moz-placeholder {
+    color:    #D6D6D6 !important;
+}
+
+body, ul{
+    margin: 0;
+    padding: 0;
+    font: 13px "Helvetica Neue", Helvetica,Arial,sans-serif;
+}
+
+body{
+    background: #9A9A9A;
+}
+
+a{
+    color: $primaryColor;
+    &.remove{
+        color: rgb(184, 84, 84);
+    }
+
+    &:active, &:focus{
+        outline: none;
+    }
+}
+
+li{
+    list-style-type: none;
+}
+
+textarea{
+    resize: vertical;
+    min-height: 120px;
+}
+
+.container{
+    width: 1250px;
+    min-height: 690phx;
+}
+.container-fluid{
+    background: #9A9A9A;
+    padding-top: 52px;
+}
+
+a:focus, a:hover{
+  text-decoration: none;
+}
+
+input[type="radio"]{
+    display: inline;
+    width: 12px;
+    height: 15px;
+    margin: 0 10px;
+}
+
+.error{
+    margin: 20px 0;
+    color: #A94442;
+    text-align: center;
+}
+
+.alert{
+    padding: 20px 0;
+    bottom: 0;
+    margin: 0;
+    position: fixed;
+    text-align: center;
+    width: 100%;
+    z-index: 100;
+}
+.alert-notice{
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    color: #3c763d;
+}
+.alert-error, .alert-alert{
+    text-align: center;
+    background-color: #F2DEDE;
+    border-color: #EBCCD1;
+    color: #A94442;
+}
+
+.required-indicator{
+    color: red;
+}
+
+.bootstrap-datetimepicker-widget{
+    font-size: 10px;
+}
+
+.title{
+    // color: #fff;
+    font-size: 50px;
+    font-weight: lighter;
+    letter-spacing: 3px;
+}
+
+
+#twitter-submit{
+    padding: 13px 0;
+}
+
+.button{
+    width: 180px;
+    color: #fff;
+    display: block;
+    float: left;
+    border: none;
+    margin-left: 18px;
+    padding: 23px 0;
+    text-align: center;
+    text-transform: uppercase;
+    @include border-radius(5px);
+
+    &:hover{
+        text-decoration: none;
+        color: #fff;
+        opacity: 0.8;
+    }
+
+    &:hover, &:active, &:focus{
+        color: #fff;
+        outline: none;
+    }
+
+    &.edit{
+        background: $primaryColor;
+    }
+    &.new{
+        background: $primaryColor;        
+        max-width: 80px;
+        padding: 15px 8px;
+        float: right;
+        position: absolute;
+        top: 17px;
+        right: 30px;
+    }
+    &.slate{
+        background: $primaryColor;
+    }
+    &.center{
+        width: 100%;
+        margin: 0;
+        &.delete{
+            margin-top: 20px;
+            background: rgb(158, 84, 84);
+        }
+    }
+}
+
+// Bootstrap dropdown menu for inputs
+
+.dropdown-menu {
+    top: 87%;
+
+    & > li{
+        & > a{
+            font-size: 0.95em;
+            padding: 5px 20px;
+        }
+        & > div{
+            clear: both;
+            color: #333333;
+            display: block;
+            font-weight: normal;
+            line-height: 1.42857;
+            white-space: nowrap;
+            font-size: 0.95em;
+            padding: 5px 20px;
+        }
+        & > input{
+            width: 300px;
+            margin: 8px 17px;
+            clear: both;
+            color: #333333;
+            display: block;
+            font-weight: normal;
+            line-height: 1.42857;
+            padding: 3px 10px;
+            white-space: nowrap;
+            
+            &[type="checkbox"]{
+                width: 21px;
+                display: inline-block;
+                padding: 0;
+                margin: 10px 0;
+            }
+        }
+
+    }
+}
+.dropdown-header{
+    padding: 3px 20px 5px 20px;
+}
+
+#back-btn, #edit-btn{
+    color: #7b7b7b;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+#edit-btn{
+    float: right;    
+}
+
+.option-label{
+    cursor: default;
+    margin-left: 10px;
+}
+
+/******************** HEADER ********************/
+
+header{
+    // background: $primaryColor;
+    background: #fff;
+    border-bottom: 3px solid $primaryColor;
+    overflow: inherit;
+    width: 100%;
+    height: 55px;
+    z-index: 100;
+    padding-top: 3px;
+    position: fixed;
+
+    #main-logo{
+        display: block;
+        margin: 5px 30px;
+        height: 35px;
+    }
+
+     #header-links-container{
+        position: absolute;
+        right: 50px;
+        top: 8px;
+
+        .header-link{
+            display: inline-block;
+            color: #F4F4F4;
+            letter-spacing: 1px;
+            line-height: 38px;
+        }
+
+        a.link{
+            text-transform: uppercase;
+            text-decoration: none;
+            padding: 10px;
+            font-size: 13px;
+            background-color: #fff;
+            display: block;
+            letter-spacing: 0.5px;
+        }
+    }
+
+    #brand{
+        font-size: 26px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        line-height: 46px;
+        margin: 30px;
+        font-weight: 300;
+    }
+
+    #accountMenu{
+        float: right;
+        display: inline-block;
+        height: 44px;
+        cursor: default;
+
+        .thumbImage{
+            width: 35px;
+            height: 35px;
+        }
+        .dropdown-menu{
+            margin-top: 14px;
+            box-shadow: none;
+        }
+        #name{
+            color: $primaryColor;
+            margin: 0 7px;
+            line-height: 36px;
+            display: inline-block;
+        }
+    }
+}
+
+.form-title{
+    text-transform: uppercase;
+    color: #a1a1a1;
+    letter-spacing: 0.5px;
+    margin: 0 0 0 4px;
+    border-top: 0;
+    font-size: 18px;
+    font-weight: 200;
+    padding: 10px 0;
+    border-right: 1px solid #D4D4D4;
+
+    & > div{
+        float: left;
+    }
+}
+
+
+.form-checkbox{
+    margin: 16px 10px !important;
+}
+
+.form-file{
+    margin: 11px 0 0 10px;
+    padding-left: 10px;
+    width: 70%
+}
+
+.form-input{
+    font-size: 15px;
+    background: #fff;
+    border: none;
+    height: 50px;
+    outline: none;
+    width: 100%;
+    box-shadow: none;
+    padding-top: 0;
+    margin-top: -2px;
+
+    &:active, &:focus{
+        border-color: transparent;
+        box-shadow: none;
+        outline: none;
+    }
+}
+
+ select.form-input{
+    border: 1px solid #E4E4E4;
+    margin-left: 10px;
+}
+
+/******************** FOOTER ********************/
+footer.container-fluid{
+    padding-top: 30px;
+    text-align: center;
+    padding: 30px 0;
+    color: #fff;
+}
+
+
+/******************** BOX/SHOW/EDIT ********************/
+
+.subtitle{
+    text-align: left;
+    text-transform: uppercase;
+    color: rgb(161, 161, 161);
+    clear: both;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+    border-top: 0;
+    font-size: 16px;
+    font-weight: 200;
+}
+
+.section-title{
+    text-transform: uppercase;
+    color: #a1a1a1;
+    clear: both;
+    letter-spacing: 0.5px;
+    margin: 20px 0 30px 0;
+    border-top: 0;
+    font-size: 18px;
+    font-weight: 200;
+    border-bottom: 1px solid #a1a1a1;
+    padding: 10px 0;
+
+    & > div{
+        float: left;
+    }
+}
+
+.box{
+    background: #fff;
+    overflow: hidden;
+    @include border-radius(10px);
+    padding: 35px 60px;
+    margin-top: 40px;
+    min-height: 550px;
+
+    .title{
+        color: rgb(129, 129, 129);
+        margin-top: 0;
+        text-transform: uppercase;
+        text-align: center;
+        font-weight: 300;
+        font-size: 27px;
+        margin-bottom: 15px;
+    }
+
+
+    &.small{
+        min-height: 0
+    }
+
+    #headline{
+        margin-bottom: 20px;
+    }
+    .detailTitle{
+        text-transform: uppercase;
+    }
+    
+    .boxTitle{
+        font-weight: 300;
+        font-size: 26px;
+        text-align: left;
+        margin-bottom: 5px;
+    }
+
+    .sectionTitle{
+        border-bottom: 1px solid #808080;
+        width: 250px;
+        margin: 15px auto;
+        text-transform: uppercase;
+        text-align: center;
+        font-weight: 300;
+        font-size: 23px;
+    }
+
+    .rowTitle{
+        font-weight: bold;
+        padding-right: 30px;
+        text-align: right;
+    }
+    .row{
+        border-bottom: 1px solid #f6f6f6;
+        padding: 10px 0;
+    }
+    .row:last-child { 
+        border-bottom: none; 
+    }
+    .detail{
+        padding: 0 20px;
+        img.data{
+            width: 100%;
+        }
+    }
+}
+
+
+/******************** INDEX ********************/
+
+.searchContainer{
+    border: 1px solid #dfdfdf;
+    border-radius: 5px;
+    box-sizing: border-box;
+    clear: both;
+    float: left;
+    font-size: 14px;
+    min-height: 43px;
+    padding: 7px 12px;
+    transition-duration: 0.1s;
+    margin-bottom: 20px;
+
+    .searchIcon{
+        font-size: 23px;
+        color: #D0CDCD;
+        font-weight: lighter;
+    }
+
+    input{
+        background: #ffffff;
+        border: none;
+        padding: 0;
+        margin-left: 8px;
+        width: 90%;
+        outline: none;
+        line-height: 1em;
+    }
+}
+
+.dashboard{
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0 auto 20px;
+    font-size: 13px;
+    
+    li{
+        display: inline-block;
+        text-align: center;
+        margin: 0 15px 0 0;
+        padding: 0 39px 0 30px;
+        border-right: 1px solid rgb(184, 184, 184);
+
+        &:last-child{
+            border-right: none;
+        }
+
+        .dashboard-stat-number {
+            display: inline-block;
+            font-size: 23px;
+        }
+    }
+}
+
+.caret.asc {
+    border-top-width: 0;
+    border-bottom: 4px solid #e28778;
+}
+
+.indexList-header{
+    border-bottom: 1px solid #e6e6e6;
+    font-weight: 500;
+    color: #909090;
+    margin-top: 40px;
+    padding-bottom: 20px;
+    text-align: center;
+    text-transform: uppercase;
+
+    .dropdown-checkbox-option {
+        text-transform: normal;
+        padding-left: 16px;
+    }
+}
+
+.indexList{
+    text-align: center;
+    border-bottom: 1px solid #E6E6E6;
+    
+    &.category{
+        padding: 0;
+
+        .cell{
+            padding: 0;
+        }
+    }
+
+    &.row:hover{
+        background: #f6f6f6;
+    }
+    .cell{
+        padding: 10px 0;
+
+        .userThumb{
+            margin: 0 15px;
+        }
+    
+        .status-icon, .text{
+            margin-top: 20px;
+        }
+        .text{
+            padding: 0 23px;
+        }
+        .fact-preview-image, .recomendation-preview-image{
+            width: 100%;
+            padding: 15px;
+            height: auto;
+        }
+    }
+    a{
+        color: #838383;
+    }
+    &:nth-child(even){
+    //  background: #f7f7f7;
+    }
+
+
+    .user-avatar-med{
+        width: 80px;
+        height: 80px;
+        background: #2f5c5a;
+        border-radius: 50%;
+        margin: 0px auto 20px;
+        display: block;
+    }
+}
+
+#user-box{
+    .searchContainer{
+        width: 100%;
+    }
+}
+
+.pagination{
+    width: 100%;
+    display: block;
+    clear: both;
+    padding-top: 20px;
+    font-size: 0.8em;
+
+    a{
+        color: $primaryColor; 
+    }
+    .active{
+        a{
+            font-size: 14px;
+            display: inline-block;
+            background-color: $primaryColor;
+            color: #fff;
+            border-radius: 50%;
+            width: 22px;
+            height: 22px;
+            text-align: center;
+            line-height: 22px;
+            margin-top: -6px;
+        }
+    }
+    ul{
+        display: table;
+        margin: 0 auto;
+    }
+    li{
+        display: table-cell;
+        float: left;
+        margin: 0 7px;
+        &.active{
+            font-weight: bold;
+        }
+    }
+}
+
+/******************** TWEETS ********************/
+#tweet-box{
+    .searchContainer{
+        width: 350px;
+    }
+}
+
+#tweet-list{
+
+    clear: both;
+
+    #empty-tweets-text{
+        text-align: left;
+        font-size: 20px;
+        font-weight: 300;
+    }
+
+    li{
+        padding: 0px 9px;
+        margin-bottom: 10px;
+        border-bottom: 1px dashed #fff;
+
+        .tweet-container{
+            padding: 13px 30px;
+            border: 1px solid #E6E6E6;
+            border-radius: 5px;
+            height: 150px;
+        }
+       
+        .tweet-user{
+            font-weight: bold;
+        }
+        .tweet-profile-image{
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+        
+        .tweet-content{
+            margin-top: 10px;
+        }
+
+        .tweet-stats{
+            position: absolute;
+            bottom: 20px;
+                    
+            span{
+                text-transform: uppercase;
+                font-size: 10px;
+                margin-right: 10px;
+            }
+        }
+    }
+}
+

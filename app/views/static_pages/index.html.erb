@@ -1,0 +1,12 @@
+<% provide(:title, 'Tweets') %>
+<div id="tweet-box" class="box col-md-12 col-md-offset-0 col-sm-10 col-sm-offset-1">   
+    <div class="title">Tweets</div>
+    <div id="tweet-list-section">
+        <div class="searchContainer">
+            <span class="searchIcon">@</span>
+            <input type="text" name="twitter-handle" class="input name-input" placeholder="Enter a handle, any handle"> <br />
+        </div>
+        <input id="twitter-submit" type="submit" name="twitter-submit" class="button update slate" />
+        <%= render 'tweet_list' %>
+    </div>
+</div>

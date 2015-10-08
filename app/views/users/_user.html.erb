@@ -1,0 +1,8 @@
+<div class="indexList row">
+    <%= link_to user do %>
+        <div class="col-sm-1 col-xs-2 cell"><%= user.id %></div>
+        <div class="col-xs-3 cell"><%= user.name %></div>
+        <div class="col-sm-3 col-xs-5 cell"><%= user.email %></div>
+        <div class="col-xs-4 hidden-xs cell"><%= user.created_at.to_time.strftime('%B %e, %Y') unless user.created_at.nil? %></div>
+    <% end %>
+</div>
