@@ -46,7 +46,7 @@ The following feature tests have been created
 
 ### Bonuses Accomplished
 
-* Links to tweet's owner
+* Link to tweet's owner
 
 * Parses `@mentions`
 
@@ -56,4 +56,4 @@ The following feature tests have been created
 
 * User stats 
 
-* Spec test cases
+* Feature test cases
