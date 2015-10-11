@@ -11,7 +11,7 @@
                     <%= t.user.screen_name %>
                 </a>
                 <div class="tweet-content">
-                    <%= t.full_text %>
+                    <%= t.full_text.gsub(/@([a-zA-Z0-9_\.]+)/, '<a href="https://twitter.com/\1" target="_blank">@\1</a>').html_safe %>
                 </div>
 
                 <div class="tweet-stats">

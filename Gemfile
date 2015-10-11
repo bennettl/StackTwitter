@@ -13,8 +13,6 @@ gem 'jbuilder', '1.0.2'
 
 # Style
 gem 'bootstrap-sass', '~> 3.1.1.1'
-gem 'font-awesome-rails', '~> 4.2.0.0'
-gem 'momentjs-rails', '~> 2.5.0'
 
 # Twitter
 gem 'twitter', '~> 5.15.0'
@@ -38,6 +36,8 @@ group :development, :test do
     gem 'database_cleaner', '~> 1.4.1'
     gem 'selenium-webdriver', '2.35.1'
     gem 'capybara-webkit', '~> 1.6.0'
+    gem 'faker', '1.2.0'
+
 end
 
 group :production, :staging do

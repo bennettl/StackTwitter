@@ -3,8 +3,8 @@ include TwitterApiHelper
 class StaticPagesController < ApplicationController
     
     def index
-        user = User.find_by(email: 'bennettlee908@gmail.com')
-        sign_in(user)
+        # user = User.find_by(email: 'bennettlee908@gmail.com')
+        # sign_in(user)
         
         if signed_in?
             @tweets = []

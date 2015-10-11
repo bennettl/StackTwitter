@@ -2,8 +2,6 @@
 <div id="user-box" class="box col-md-12 col-md-offset-0 col-sm-10 col-sm-offset-1">   
     <div class="title">Users</div>
 
-    <%= link_to 'New', new_user_path, class: 'button new' %>
-
     <%= render 'shared/dashboard', { data: User.stats } %>
 
     <div class="searchContainer">

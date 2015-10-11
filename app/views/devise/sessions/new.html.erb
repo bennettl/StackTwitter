@@ -32,5 +32,6 @@
         </div>
         <%= f.submit 'Sign In', id: 'sign-in-button', class: 'button update slate', style: 'margin: 0; width: 100%;' %>
     <% end %>
+    <div style="text-align: center; margin-top: 19px; font-size: 15px;">New user? <%= link_to 'Sign up now!', new_user_path %></div>
     <% # render "devise/shared/links" %>
 </div>

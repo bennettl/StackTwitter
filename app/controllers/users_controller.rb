@@ -63,11 +63,13 @@ class UsersController < ApplicationController
         
         if @user.save
 
-            flash[:success] = "User Sucessfully Created"
+            flash[:success] = "Welcome to StackTwitter!"
+
+            sign_in(@user)
             
             # Respond to different formats
             respond_to do |format|
-              format.html { redirect_to @user }
+              format.html { redirect_to root_path }
               format.json { render json: { message: "User Sucessfully Created", user: @user } }
             end
         else

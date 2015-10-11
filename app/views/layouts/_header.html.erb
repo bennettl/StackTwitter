@@ -10,7 +10,7 @@
         <div id="accountMenu" class="dropdown hover" data-menu="account" style="padding: 0 10px;">
             <% if signed_in? %>
                 <%# image_tag current_user.avatar(:thumb), class: 'thumbImage' %>
-                <span id="name">Welcome &nbsp; <%= current_user.name %></span>
+                <span id="name">Welcome &nbsp;<%= current_user.name %></span>
                 <ul data-menu="account" class="dropdown-menu" style="top: 25px;">
                     <li><%= link_to 'Users', main_app.users_path %></li>
                     <li class="divider"></li>
