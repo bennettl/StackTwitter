@@ -1,14 +1,14 @@
-== StackTwitter
+# StackTwitter
 
 ### Description
 
 StackTwitter is a Rails app that displays the 25 most recent tweets for any given Twitter handle. A few tools used
 
-* Twitter gem for consuming the [Twitter API](https://dev.twitter.com/docs/api)
+* [Twitter](https://github.com/sferik/twitter) gem for consuming the [Twitter API](https://dev.twitter.com/docs/api)
 
-* Devise gem for a user authentication
+* [Devise](https://github.com/plataformatec/devise) gem for a user authentication
 
-* Rspec, faker, factory girl, capybara, selenium for creating feature tests
+* [Rspec Rails](https://github.com/rspec/rspec-rails), [Faker](https://github.com/stympy/faker), [Factory Girl](https://github.com/thoughtbot/factory_girl), [Capybara](https://github.com/jnicklas/capybara), [Selenium WebDriver](http://www.seleniumhq.org/projects/webdriver/) for creating feature tests
 
 ### Demo
 
@@ -22,11 +22,13 @@ Please visit the [Heroku App](http://stacktwitter.herokuapp.com/) for a live dem
 
 1. Run `rails s`
 
-1. Go to http://localhost:3000
+1. Go to `http://localhost:3000`
+
+1. Create a new account with the web UI
 
 ### Tests
 
-* Run `bundle exec rspec spec/features/*`
+Run `bundle exec rspec spec/features/*`
 
 The following feature tests have been created
 
@@ -46,7 +48,7 @@ The following feature tests have been created
 
 * Links to tweet's owner
 
-* Parses @mentions
+* Parses `@mentions`
 
 * User creation, listing, update, and profile pages 
 

@@ -5,8 +5,8 @@
     <%= render 'shared/dashboard', { data: User.stats } %>
 
     <div class="searchContainer">
-        <span class="searchIcon glyphicon glyphicon-search icon-flipped"></span>
-        <input data-type="users" type="text" name="index_search" class="input name-input" placeholder="Enter a name, any name">
+        <span class="searchIcon glyphicon glyphicon-search icon-flipped" style="font-size: 18px; 3px 0 0 0px"></span>
+        <input data-type="users" type="text" name="index_search" class="input name-input" placeholder="Enter a name, any name" style="height: 30px;"/>
     </div>
     <div class="indexList-header row">
         <%= form_for users_path, html: { id: 'user-index-form' } do |f| %>
