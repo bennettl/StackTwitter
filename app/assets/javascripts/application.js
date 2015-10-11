@@ -346,7 +346,13 @@ function setupTweets(){
     
             var data = { handle: handle };
 
-            $.get('/tweets', data, function(){}, 'script');
+            $.get('/tweets', data, function(){
+
+                if ($('#empty-tweets-text').length > 0){
+                    $('#empty-tweets-text').text('Sorry, no tweets matches your handle');
+                }
+
+            }, 'script');
 
         } else{
             _helper.showAlert('error', 'Please provide a valid handle');
